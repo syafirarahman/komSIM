@@ -84,11 +84,11 @@
               <i class="fa fa-history"></i> <span>Log</span>
             </a>
           </li>
-          <li class="@yield('Ustatus3')">
+          <!-- <li class="@yield('Ustatus3')">
             <a href="{{ url('/ubahPassword') }}">
               <i class="fa fa-lock"></i> <span>Ubah Password</span>
             </a>
-          </li>
+          </li> -->
           <li>
             <a data-target="#modal-keluar" data-toggle="modal">
                 <i class="fa fa-arrow-left"></i> <span>Logout</span>
