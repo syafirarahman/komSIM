@@ -207,7 +207,7 @@
       div2.id="div2"+i;
       div3.id="div3"+i;
     button.innerHTML = '<i class="fa fa-fw fa-folder"></i> Kegiatan '+i; // kata yang ditampilkan
-    button.id="buttonNew"+i;
+    button.id="buttonNew"+i;    
     button.onclick = function(){
     return false;
   };
