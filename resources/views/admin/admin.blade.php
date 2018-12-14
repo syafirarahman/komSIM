@@ -6,7 +6,7 @@
 
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> Admin</a></li>
-        <li class="active">Kegiatan</li>
+        <li class="active">Kegiatan </li>
     </ol>
 </section>
 @endsection

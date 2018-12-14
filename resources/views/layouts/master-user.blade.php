@@ -119,7 +119,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body">
-          Yakin Anda ingin keluar?
+          Yakin Anda ingin keluar??
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline logout-no pull-left" data-dismiss="modal">Tidak</button>
