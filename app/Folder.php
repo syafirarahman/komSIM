@@ -2,8 +2,6 @@
 
 namespace App;
 use Illuminate\Database\Eloquent\Model;
-
-use Illuminate\Database\Eloquent\Model;
 //use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Folder extends Model
@@ -44,7 +42,7 @@ class Folder extends Model
     public function activitie(){
         return $this->belongsTo('Activitie','activitie_id');
     }
-    public function folderparent(){
-        return $this->belongsTo('Folder','folder_id');
-    }
+    //public function folderparent(){
+      //  return $this->belongsTo('Folder','folder_id');
+    //}
 }

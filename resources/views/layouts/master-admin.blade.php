@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -123,7 +124,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body">
-          Yakin Anda ingin keluar?
+          Yakin Anda ingin keluar??
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline logout-no pull-left" data-dismiss="modal">Tidak</button>
@@ -148,7 +149,6 @@
   <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
   <script>
     $.widget.bridge('uibutton', $.ui.button);
-
   </script>
   <!-- Bootstrap 3.3.7 -->
   <script src="{{asset('asset/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
@@ -182,6 +182,7 @@
   <!-- Data Table -->
   <script src="{{asset('asset/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
   <script src="{{asset('asset/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
+  <script src="{{asset('asset/bower_components/style.js')}}"></script>
   <script>
     $(function () {
       $('#example1').DataTable()
@@ -194,7 +195,6 @@
         'autoWidth'   : false
       })
     })
-
   </script>
   <script>
     $(function () {
@@ -236,7 +236,6 @@
       $('#new-event').val('')
     })
   })
-
   </script>
   <script>
     $(function () {
@@ -278,8 +277,8 @@
       $('#new-event').val('')
     })
   })
-
   </script>
 </body>
 
 </html>
+

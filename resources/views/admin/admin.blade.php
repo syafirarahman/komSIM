@@ -38,38 +38,16 @@
                 <!-- Daftar kegiatan yang dibuat -->
                 <div class="row">
                   <div class="col-md-12">
-                    <div class="box box-primary">
-
-                      <!-- Perulangan nanti terjadi disini -->
-                      <div class="col-md-3">
-                        <div class="box box-primary">
-                          <div>
-                              <button type="button" class="btn btn-block btn-default btn-lg"><i class="fa fa-fw fa-folder"></i> Kegiatan 1</button>
-                          </div>
-                        </div>
-                      </div>
+                    <div class="box box-primary" id="kegiatan">
+                      @foreach ($data as $datas)
                       <div class="col-md-3">
                           <div class="box box-primary">
                             <div>
-                                <button type="button" class="btn btn-block btn-default btn-lg"><i class="fa fa-fw fa-folder"></i> Kegiatan 1</button>
+                                <a href="{{url('admin/aktifitas')}}" class="btn btn-block btn-default btn-lg" id="{{$datas->id}}"><i class="fa fa-fw fa-folder"></i>{{$datas->name}}</a>
                             </div>
                           </div>
-                        </div>  
-                        <div class="col-md-3">
-                            <div class="box box-primary">
-                              <div>
-                                  <button type="button" class="btn btn-block btn-default btn-lg"><i class="fa fa-fw fa-folder"></i> Kegiatan 1</button>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-3">
-                              <div class="box box-primary">
-                                <div>
-                                    <button type="button" class="btn btn-block btn-default btn-lg"><i class="fa fa-fw fa-folder"></i> Kegiatan 1</button>
-                                </div>
-                              </div>
-                            </div>
-                      
+                        </div>
+                      @endforeach
                     </div>
                   </div>
                 </div>
@@ -154,7 +132,7 @@
             <div class="input-group-addon">
               <i class="fa fa-font"></i>
             </div>
-            <input type="text" class="form-control pull-right">
+            <input type="text" class="form-control pull-right" required>
           </div>
 
           <label>Time:</label>
@@ -162,7 +140,7 @@
             <div class="input-group-addon">
               <i class="fa fa-clock-o"></i>
             </div>
-            <input type="text" class="form-control pull-right">
+            <input type="text" class="form-control pull-right" required>
           </div>
 
           <label>Date:</label>
@@ -170,7 +148,7 @@
             <div class="input-group-addon">
               <i class="fa fa-calendar"></i>
             </div>
-            <input type="text" class="form-control pull-right" id="datepicker">
+            <input type="text" class="form-control pull-right" id="datepicker" required>
           </div>
 
           <label>Tempat:</label>
@@ -178,12 +156,12 @@
             <div class="input-group-addon">
               <i class="fa fa-bank"></i>
             </div>
-            <input type="text" class="form-control pull-right">
+            <input type="text" class="form-control pull-right" required>
           </div>
 
           <label>Deskripsi</label>
           <div>
-            <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+            <textarea class="form-control" rows="3" placeholder="Enter ..." required></textarea>
           </div>
 
           <label>Tambahkan File</label>
@@ -242,7 +220,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Tutup</button>
-        <button type="button" class="btn btn-primary">Simpan</button>
+        <button type="button" class="btn btn-primary" onclick="newButton()">Simpan</button>
       </div>
     </div>
   </div>

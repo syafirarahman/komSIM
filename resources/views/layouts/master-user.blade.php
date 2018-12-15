@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -84,11 +85,11 @@
               <i class="fa fa-history"></i> <span>Log</span>
             </a>
           </li>
-          <li class="@yield('Ustatus3')">
+          <!-- <li class="@yield('Ustatus3')">
             <a href="{{ url('/ubahPassword') }}">
               <i class="fa fa-lock"></i> <span>Ubah Password</span>
             </a>
-          </li>
+          </li> -->
           <li>
             <a data-target="#modal-keluar" data-toggle="modal">
                 <i class="fa fa-arrow-left"></i> <span>Logout</span>
@@ -119,7 +120,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body">
-          Yakin Anda ingin keluar?
+          Yakin Anda ingin keluar??
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline logout-no pull-left" data-dismiss="modal">Tidak</button>
@@ -283,4 +284,4 @@
 
 </html>
 
-{{-- --}}
+
