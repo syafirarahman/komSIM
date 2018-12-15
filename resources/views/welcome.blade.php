@@ -43,23 +43,34 @@
                 <img src="{{asset('asset/dist/img/SIDOKOMSI.svg')}}">
             </nav>
         </header>
-        <div>
+        <div class="row">
                 @if (Route::has('login')) @if (Auth::check())
-                <a href="{{ url('/home') }}"><button type="submit" class=" btn btn-success yellow">Home</button></a>
+                <div class="col-md-12" align="center">
+                  <a href="{{ url('/home') }}"><button type="submit" class=" btn btn-success yellow">Home</button></a>
+                </div>
                 @else
-                <a href="{{ url('/home') }}"><button type="submit" class=" btn btn-success yellow">Login</button></a>
-                <a href="{{ url('/register') }}"><button type="submit" class=" btn btn-success yellow">Register</button></a> @endif @endif     
+                <div class="col-md-3" align="center"></div>
+                <div class="col-md-3" align="center">
+                  <a href="{{ url('/home') }}"><button type="submit" class="btn btn-success yellow">Login</button></a>
+                </div>
+                <div class="col-md-3" align="center">
+                  <a href="{{ url('/register') }}"><button type="submit" class="btn btn-success yellow">Register</button></a>
+                </div>
+                <div class="col-md-3" align="center"></div> @endif @endif     
         </div>
         <div class="img-bg">
                 <div class=" row">
-                    <div class=" col-md-4">
-                        <img src="{{asset('asset/dist/img/SIDO1.png')}}" alt="" class="bg">
-                    </div>
-                    <div class=" col-md-4">
+                    <div class=" col-md-3">
                         <img src="{{asset('asset/dist/img/SIDO2.png')}}" alt="" class="bg">
                     </div>
-                    <div class=" col-md-4">
+                    <div class=" col-md-3">
                         <img src="{{asset('asset/dist/img/SIDO1.png')}}" alt="" class="bg">
+                    </div>
+                    <div class=" col-md-3">
+                        <img src="{{asset('asset/dist/img/SIDO1.png')}}" alt="" class="bg">
+                    </div>
+                    <div class=" col-md-3">
+                        <img src="{{asset('asset/dist/img/SIDO2.png')}}" alt="" class="bg">
                     </div>
                 </div>
             </div>

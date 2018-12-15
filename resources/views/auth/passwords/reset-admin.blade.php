@@ -6,7 +6,7 @@
             <!-- /.login-logo -->
             <div class="login-box-body logon">
                 <p class="login-box-msg">
-                    <img src="{{asset('asset/dist/img/resetPass.png')}}" alt="">
+                    <img src="{{asset('asset/dist/img/resetPass.png')}}" width="200px">
                 </p>
 
                 <div class="panel-body">

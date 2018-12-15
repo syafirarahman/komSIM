@@ -44,6 +44,7 @@
                     <th>NID</th>
                     <th>Nama</th>
                     <th>Email</th>
+                    <th>No HP</th>
                     <th width="280px">Action</th>
                   </tr>
                 </thead>
@@ -54,6 +55,7 @@
                     <td>{{ $user->nip }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
+                    <td>{{ $user->phone }}</td>
                     <td>
                     <a class="btn btn-primary"
                     data-toggle="modal" data-target="#modal-default1">Edit</a>

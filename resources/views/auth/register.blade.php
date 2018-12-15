@@ -8,7 +8,7 @@
             <!-- /.login-logo -->
             <div class="login-box-body logon">
                 <p class="login-box-msg">
-                    <img src="{{asset('asset/dist/img/Register.png')}}" alt="">
+                    <img src="{{asset('asset/dist/img/Register.png')}}" width="120px">
                 </p>
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}

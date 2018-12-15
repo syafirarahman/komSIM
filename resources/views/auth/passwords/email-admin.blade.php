@@ -6,7 +6,7 @@
             <!-- /.login-logo -->
             <div class="login-box-body logon">
                 <p class="login-box-msg">
-                    <img src="{{asset('asset/dist/img/resetPass.png')}}" alt="">
+                    <img src="{{asset('asset/dist/img/lupaPass.png')}}" width="200px">
                 </p>
 
                 <div class="panel-body">
@@ -22,7 +22,7 @@
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                             <input id="email" type="email" class="form-control logon" name="email" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
