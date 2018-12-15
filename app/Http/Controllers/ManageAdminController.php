@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Admin;
+use App\User;
 use Hash;
 
 class ManageAdminController extends Controller
@@ -22,8 +22,8 @@ class ManageAdminController extends Controller
 
     public function index(Request $request)
     {
-        $admins = Admin::orderBy('id','DESC')->paginate(5);
-        return view('manageadmins.index',compact('admins'))
+        $users = User::orderBy('id','DESC')->paginate(5);
+        return view('manageadmins.index',compact('users'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -48,17 +48,17 @@ class ManageAdminController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
+            'nip' => 'required',
+            'phone' => 'required',
             'email' => 'required|email|unique:users,email',
-            'job_title' => 'required',
             'password' => 'required|min:6|same:confirm-password',
             ]);
 
             $input = $request->all();
             $input['password'] = Hash::make($input['password']);
 
-            $admin = Admin::create($input);
-
-            return redirect()->route('manageadmins.index')->with('success','Admin successfully added');
+            $user = User::create($input);
+            return redirect('admin/pengguna')->with('success','User successfully added');
     }
 
     /**
@@ -69,8 +69,8 @@ class ManageAdminController extends Controller
      */
     public function show($id)
     {
-        $admin = Admin::find($id);
-        return view('manageadmins.show',compact('admin'));
+        $user = User::find($id);
+        return view('manageadmins.show',compact('user'));
         // Untuk liat data dalam json
         //return compact('admin');
     }
@@ -83,8 +83,7 @@ class ManageAdminController extends Controller
      */
     public function edit($id)
     {
-        $admin = Admin::find($id);
-        return view('manageadmins.edit',compact('admin'));
+        $user = User::find($id);
     }
 
     /**
@@ -98,8 +97,7 @@ class ManageAdminController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'job_title' => 'required',
+            'email' => 'required',
             'password' => 'same:confirm-password',
         ]);
             $input = $request->all();
@@ -109,9 +107,9 @@ class ManageAdminController extends Controller
             $input = array_except($input,array('password'));
             }
 
-            $admin = Admin::find($id);
-            $admin->update($input);
-            return redirect()->route('manageadmins.index')->with('success','Admin successfully updated');
+            $user = User::find($id);
+            $user->update($input);
+            return redirect()->route('manageadmins.index')->with('success','User successfully updated');
     }
 
     /**
@@ -122,6 +120,7 @@ class ManageAdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::find($id)->delete();
+        return redirect('admin/pengguna')->with('success','User successfully removed');
     }
 }

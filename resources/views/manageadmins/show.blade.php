@@ -20,19 +20,19 @@
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
 						<strong>Name:</strong>
-						{{ $admin->name }}
+						{{ $user->name }}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
 						<strong>Email:</strong>
-						{{ $admin->email }}
+						{{ $user->email }}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
 					<strong>Job title:</strong>
-					{{ $admin->job_title }}
+					{{ $user->job_title }}
 					</div>
 				</div>
 		</div>

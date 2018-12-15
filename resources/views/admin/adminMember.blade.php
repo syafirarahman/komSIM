@@ -1,5 +1,17 @@
 @extends('layouts.master-admin')
 
+@section('logout')
+<a href="{{ route('admin.logout') }}"
+  onclick="event.preventDefault();
+    document.getElementById('logout-form').submit();">
+  Logout
+</a>
+
+<form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+  {{ csrf_field() }}
+</form>
+@endsection
+
 @section('content-header')
 <section class="content-header">
     <h3>Pengguna</h3>
@@ -9,18 +21,16 @@
         <li class="active">Pengguna</li>
     </ol>
 </section>
-@endsection
-
-@section('content')
+      @if ($message = Session::get('success'))
+          <div class="alert alert-success">
+            <p>{{ $message }}</p>
+          </div>
+        @endif
 <section class="content">
-        <div class="callout callout-success">
-                <h4>Reminder! Nanti bakal muncul ketika klik "simpan"</h4>
-                Instructions for how to use modals are available on the
-                <a href="http://getbootstrap.com/javascript/#modals">Bootstrap documentation</a>
-        </div>
+        
     <div class="box">
         <div class="box-header custom">
-            <h1>Member</h1>
+            <h1>Pengguna</h1>
             <button type="button" class="btn btn-success custom btn-lg" data-toggle="modal" data-target="#modal-default"><i class="fa fa-fw fa-plus-circle"></i>
                 Tambah
             </button>
@@ -29,87 +39,40 @@
         <div class="box-body">
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                    <tr>
-                        <th>NID</th>
-                        <th>Nama</th>
-                        <th>Action</th>
-                    </tr>
+                  <tr>
+                    <th>ID</th>
+                    <th>NID</th>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th width="280px">Action</th>
+                  </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>390284184</td>
-                        <td>Sansa Stark</td>
-                        <td>
-                            <a href="{{url ('AeditMember')}}">
-                            <button type="button" class="btn btn-default custom"><i class="fa fa-edit"></i></button>
-                            </a>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger"><i class="fa fa-trash-o"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>390284185</td>
-                        <td>Jon Snow</td>
-                        <td>
-                            <a href="{{url ('AeditMember')}}">
-                            <button type="button" class="btn btn-default custom"><i class="fa fa-edit"></i></button>
-                            </a><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger"><i class="fa fa-trash-o"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>390284186</td>
-                        <td>Cersei Lannister</td>
-                        <td>
-                            <a href="{{url ('AeditMember')}}">
-                            <button type="button" class="btn btn-default custom"><i class="fa fa-edit"></i></button>
-                            </a><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger"><i class="fa fa-trash-o"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>390284187</td>
-                        <td>Daenerys Targaryen</td>
-                        <td>
-                            <a href="{{url ('AeditMember')}}">
-                            <button type="button" class="btn btn-default custom"><i class="fa fa-edit"></i></button>
-                            </a>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger"><i class="fa fa-trash-o"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>390284188</td>
-                        <td>Tyrion Lannister</td>
-                        <td>
-                            <a href="{{url ('AeditMember')}}">
-                            <button type="button" class="btn btn-default custom"><i class="fa fa-edit"></i></button>
-                            </a>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger"><i class="fa fa-trash-o"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>390284189</td>
-                        <td>Tommen Baratheon</td>
-                        <td>
-                            <a href="{{url ('AeditMember')}}">
-                            <button type="button" class="btn btn-default custom"><i class="fa fa-edit"></i></button>
-                            </a>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger"><i class="fa fa-trash-o"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>390284190</td>
-                        <td>Sandor Clegane</td>
-                        <td>
-                            <a href="{{url ('AeditMember')}}">
-                            <button type="button" class="btn btn-default custom"><i class="fa fa-edit"></i></button>
-                            </a>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger"><i class="fa fa-trash-o"></i></button>
-                        </td>
-                    </tr>
-                    </tfoot>
+                  @foreach ($users as $key => $user)
+                  <tr>
+                    <td>{{ ++$i }}</td>
+                    <td>{{ $user->nip }}</td>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>
+                    <a class="btn btn-primary"
+                    data-toggle="modal" data-target="#modal-default1">Edit</a>
+                    {!! Form::open(['method' => 'DELETE','route' =>
+                    ['manageadmins.destroy', $user->id],'style'=>'display:inline']) !!}
+                    {!! Form::submit('Delete', ['class' => 'btn btndanger'])
+                    !!}
+                    {!! Form::close() !!}
+                    </td>
+                  </tr>
+                  @endforeach
+                </tbody>
             </table>
+            {!! $users->render() !!}
         </div>
 </section>
 
-<!-- Modal buat nambah kegiatan -->
+<!-- Modal buat nambah user -->
+{!! Form::open(array('route' => 'manageadmins.store','method'=>'POST')) !!}
 <div class="modal fade" id="modal-default">
     <div class="modal-dialog">
       <div class="modal-content add">
@@ -121,28 +84,36 @@
         <div class="modal-body">
           <div class="form-group">
 
-          <label>Nama:</label>
+          <label>Nama : </label>
           <div class="input-group date">
             <div class="input-group-addon">
               <i class="fa fa-font"></i>
             </div>
-            <input type="text" class="form-control pull-right">
+            {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
           </div>
 
-          <label>Username:</label>
+          <label>NIP : </label>
           <div class="input-group date">
             <div class="input-group-addon">
               <i class="fa fa-user"></i>
             </div>
-            <input type="text" class="form-control pull-right">
+            {!! Form::number('nip', null, array('placeholder' => 'NIP','class' => 'form-control')) !!}
           </div>
 
-          <label>Email:</label>
+          <label>Phone : </label>
           <div class="input-group date">
             <div class="input-group-addon">
               <i class="fa fa-envelope-o"></i>
             </div>
-            <input type="email" class="form-control pull-right">
+            {!! Form::number('phone', null, array('placeholder' => 'Phone','class' => 'form-control')) !!}
+          </div>
+
+          <label>Email : </label>
+          <div class="input-group date">
+            <div class="input-group-addon">
+              <i class="fa fa-fw fa-lock"></i>
+            </div>
+            {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
           </div>
 
           <label>Password:</label>
@@ -150,42 +121,89 @@
             <div class="input-group-addon">
               <i class="fa fa-fw fa-lock"></i>
             </div>
-            <input type="password" class="form-control pull-right">
+            {!! Form::password('password', array('placeholder' => 'Password','class' => 'form-control')) !!}
           </div>
 
-          <label>Ulangi Password:</label>
-          <div class="input-group date">
-            <div class="input-group-addon">
-              <i class="fa fa-fw fa-lock"></i>
-            </div>
-            <input type="password" class="form-control pull-right">
-          </div>
-
-          <label>NID:</label>
+          <label>Ulangi Password : </label>
           <div class="input-group date">
             <div class="input-group-addon">
               <i class="fa fa-edit"></i>
             </div>
-            <input type="password" class="form-control pull-right">
+            {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' =>
+'form-control')) !!}
           </div>
 
-          <label>No HP:</label>
-          <div class="input-group date">
-            <div class="input-group-addon">
-              <i class="fa fa-phone"></i>
-            </div>
-            <input type="password" class="form-control pull-right">
-          </div>
       </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Tutup</button>
-          <button type="button" class="btn btn-primary">Simpan</button>
+          <button type="submit" class="btn btn-primary">Simpan</button>
         </div>
       </div>
+      {!! Form::close() !!}
     </div>
   </div>
 
+<!-- Modal buat edit user -->
+{!! Form::model($user, ['method' => 'PATCH','route' => ['manageadmins.update', $user->id]]) !!}
+  <div class="modal fade" id="modal-default1">
+    <div class="modal-dialog">
+      <div class="modal-content add">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Pengguna</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+
+          <label>Nama : </label>
+          <div class="input-group date">
+            <div class="input-group-addon">
+              <i class="fa fa-font"></i>
+            </div>
+            {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+          </div>
+
+          <label>Email : </label>
+          <div class="input-group date">
+            <div class="input-group-addon">
+              <i class="fa fa-fw fa-lock"></i>
+            </div>
+            {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
+          </div>
+
+          <label>Password:</label>
+          <div class="input-group date">
+            <div class="input-group-addon">
+              <i class="fa fa-fw fa-lock"></i>
+            </div>
+            {!! Form::password('password', array('placeholder' => 'Password','class' => 'form-control')) !!}
+          </div>
+
+          <label>Ulangi Password : </label>
+          <div class="input-group date">
+            <div class="input-group-addon">
+              <i class="fa fa-edit"></i>
+            </div>
+            {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' =>
+'form-control')) !!}
+          </div>
+
+      </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Tutup</button>
+          <button type="submit" class="btn btn-primary">Simpan</button>
+        </div>
+      </div>
+      {!! Form::close() !!}
+    </div>
+  </div>
+
+@endsection
+
+@section('content-header')
   {{-- Modal untuk delete --}}
 
    <div class="modal modal-danger fade" id="modal-danger">
@@ -195,7 +213,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">Apakah Anda Yakin Mengapus User Ini?
-                </h4>//nama user nanti diambil dari api
+                </h4>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Tidak</button>

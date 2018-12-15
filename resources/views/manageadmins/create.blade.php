@@ -39,14 +39,20 @@
 </div>
 <div class="col-xs-12 col-sm-12 col-md-12">
 <div class="form-group">
-<strong>Email:</strong>
-{!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
+<strong>NIP:</strong>
+{!! Form::number('nip', null, array('placeholder' => 'NIP','class' => 'form-control')) !!}
 </div>
 </div>
 <div class="col-xs-12 col-sm-12 col-md-12">
 <div class="form-group">
-<strong>Job title:</strong>
-{!! Form::text('job_title', null, array('placeholder' => 'Job title','class' => 'form-control')) !!}
+<strong>Phone:</strong>
+{!! Form::number('phone', null, array('placeholder' => 'Phone','class' => 'form-control')) !!}
+</div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12">
+<div class="form-group">
+<strong>Email:</strong>
+{!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
 </div>
 </div>
 <div class="col-xs-12 col-sm-12 col-md-12">

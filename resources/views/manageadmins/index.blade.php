@@ -16,7 +16,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-			<h1>Manage Admins</h1>
+			<h1>Manage Users</h1>
 				@if ($message = Session::get('success'))
 					<div class="alert alert-success">
 						<p>{{ $message }}</p>
@@ -37,24 +37,22 @@
 						<th>Number</th>
 						<th>Name</th>
 						<th>Email</th>
-						<th>Job Title</th>
 						<th width="280px">Action</th>
 					</tr>
 				</thead>
 			<tbody>
-				@foreach ($admins as $key => $admin)
+				@foreach ($users as $key => $user)
 				<tr>
 					<td>{{ ++$i }}</td>
-					<td>{{ $admin->name }}</td>
-					<td>{{ $admin->email }}</td>
-					<td>{{ $admin->job_title }}</td>
+					<td>{{ $user->name }}</td>
+					<td>{{ $user->email }}</td>
 					<td>
 					<a class="btn btn-info"
-					href="{{ route('manageadmins.show',$admin->id) }}">Detail</a>
+					href="{{ route('manageadmins.show',$user->id) }}">Detail</a>
 					<a class="btn btn-primary"
-					href="{{ route('manageadmins.edit',$admin->id) }}">Edit</a>
+					href="{{ route('manageadmins.edit',$user->id) }}">Edit</a>
 					{!! Form::open(['method' => 'DELETE','route' =>
-					['manageadmins.destroy', $admin->id],'style'=>'display:inline']) !!}
+					['manageadmins.destroy', $user->id],'style'=>'display:inline']) !!}
 					{!! Form::submit('Delete', ['class' => 'btn btndanger'])
 					!!}
 					{!! Form::close() !!}
@@ -63,7 +61,7 @@
 				@endforeach
 			</tbody>
 			</table>
-			{!! $admins->render() !!}
+			{!! $users->render() !!}
 		</div>
 	</div>
 @endsection
