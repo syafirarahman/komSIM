@@ -1,4 +1,3 @@
-
 @extends('layouts.master-admin')
 
 @section('content-header')
@@ -7,7 +6,7 @@
 
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> Admin</a></li>
-        <li class="active">Kegiatan </li>
+        <li class="active">Kegiatan</li>
     </ol>
 </section>
 @endsection
@@ -40,37 +39,15 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="box box-primary" id="kegiatan">
-
-                      <!-- Perulangan nanti terjadi disini -->
-                      <div class="col-md-3">
-                        <div class="box box-primary">
-                          <div>
-                              <button type="button" class="btn btn-block btn-default btn-lg"><i class="fa fa-fw fa-folder"></i> Kegiatan 1</button>
-                          </div>
-                        </div>
-                      </div>
+                      @foreach ($data as $datas)
                       <div class="col-md-3">
                           <div class="box box-primary">
                             <div>
-                                <button type="button" class="btn btn-block btn-default btn-lg"><i class="fa fa-fw fa-folder"></i> Kegiatan 1</button>
+                                <a href="{{url('admin/aktifitas')}}" class="btn btn-block btn-default btn-lg" id="{{$datas->id}}"><i class="fa fa-fw fa-folder"></i>{{$datas->name}}</a>
                             </div>
                           </div>
-                        </div>  
-                        <div class="col-md-3">
-                            <div class="box box-primary">
-                              <div>
-                                  <button type="button" class="btn btn-block btn-default btn-lg"><i class="fa fa-fw fa-folder"></i> Kegiatan 1</button>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-3">
-                              <div class="box box-primary">
-                                <div>
-                                    <button type="button" class="btn btn-block btn-default btn-lg"><i class="fa fa-fw fa-folder"></i> Kegiatan 1</button>
-                                </div>
-                              </div>
-                            </div>
-                      
+                        </div>
+                      @endforeach
                     </div>
                   </div>
                 </div>
@@ -253,4 +230,3 @@
 @section('Astatus1')
     active
 @endsection
-

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Folder;
 
 class AdminController extends Controller
 {
@@ -23,7 +24,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.admin');
+        $data = Folder::all();
+        return view('admin.admin',compact('data'));
     }
 
     public function log()
@@ -39,6 +41,11 @@ class AdminController extends Controller
     public function ubahPassword()
     {
         return view('admin.adminUbahPassword');
+    }
+
+    public function aktifitas()
+    {
+        return view('admin.adminActivity');
     }
 
 }
