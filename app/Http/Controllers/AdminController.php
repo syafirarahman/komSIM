@@ -149,4 +149,9 @@ class AdminController extends Controller
         return view('admin.adminActivity');
     }
 
+    public function folder()
+    {
+        return view('admin.adminFolder');
+    }
+
 }
