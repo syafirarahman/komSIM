@@ -79,7 +79,31 @@
                     </div>
                   </div>
                 </div>
-
+                <div class="col-md-12">
+                    <div class="box">
+                      <div class="box-body">
+                        <table id="example1" class="table table-hover">
+                          <thead>
+                          <tr>
+                            <th>Tanggal</th>
+                            <th>Waktu</th>
+                            <th>Nama User</th>
+                            <th>Action</th>
+                            <th>Hasil Perubahan</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                            <td>22 Nov 2018</td>
+                            <td>16.00 AM</td>
+                            <td>Devian</td>
+                            <td>Edit</td>
+                            <td>Folder</td>
+                          </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
               </div>
             </div>
           </div>

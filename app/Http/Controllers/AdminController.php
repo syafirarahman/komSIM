@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Hash;
 use \App\Folder;
+use \App\Activitie;
 
 class AdminController extends Controller
 {
@@ -27,8 +28,14 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $data = Folder::all();
+        $data = Activitie::all();
         return view('admin.admin',compact('data'));
+    }
+
+    public function index2()
+    {
+        $data = Folder::all();
+        return view('admin.adminFolder',compact('data'));
     }
 
     public function log()
