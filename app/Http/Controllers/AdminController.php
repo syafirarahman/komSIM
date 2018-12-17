@@ -153,5 +153,9 @@ class AdminController extends Controller
     {
         return view('admin.adminFolder');
     }
+    public function details()
+    {
+        return view('admin.adminDetail');
+    }
 
 }

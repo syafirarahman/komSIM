@@ -59,7 +59,7 @@
           <ul class="nav navbar-nav">
             <!-- Account -->
             <li>
-              <a>
+              <a href="{{url('admin/details')}}">
               <i class="fa fa-user"></i> {{ Auth::user()->name }}
             </a>
             </li>

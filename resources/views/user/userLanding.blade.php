@@ -103,6 +103,9 @@
             <table id="example1" class="table table-hover">
             </table>
           </div>
+          <div class="input-group-btn">
+            <button  type="button" class="btn btn-default pull-right btn-flat">Simpan</button>
+          </div>
         </div>
 
       </div>

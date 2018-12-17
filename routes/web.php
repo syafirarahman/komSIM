@@ -31,6 +31,7 @@ Route::prefix('admin')->group(function() {
 	Route::get('/', 'AdminController@index')->name('admin.dashboard');
     Route::get('/log', 'AdminController@log')->name('adminLog');
     Route::get('/aktifitas','AdminController@aktifitas')->name('adminAktifitas');
+    Route::get('/details','AdminController@details')->name('adminDetail');
     Route::get('/folder','AdminController@folder')->name('adminFolder');
     Route::get('/pengguna', 'AdminController@member')->name('adminMember');
     Route::get('/ubahPassword', 'AdminController@ubahPassword')->name('adminUbahPassword');

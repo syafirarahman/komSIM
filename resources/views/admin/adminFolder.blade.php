@@ -62,34 +62,57 @@
                       </div>
                     </div>
                   </div>
-                   {{-- Table --}}
-          <table id="example2" class="table table-hover">
-              <thead>
-              <tr>
-                <th>Tanggal</th>
-                <th>Waktu</th>
-                <th>Nama User</th>
-                <th>Action</th>
-                <th>Hasil Perubahan</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td>22 Nov 2018</td>
-                <td>16.00 AM</td>
-                <td>Devian</td>
-                <td>Edit</td>
-                <td>Folder</td>
-              </tr>
-              </tbody>
-            </table>
-          {{-- /Table --}}
+          
                 </div>
               </div>
             </div>
           </div>
+
+                   {{-- Table --}}
+          <div class=" box box-primary">
+          <table id="example2" class="table table-hover">
+              <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Berkas</th>
+                <th>Nama User</th>
+                <th>Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>1</td>
+                <td>uas.docs</td>
+                <td>Devian</td>
+                <td>
+                  <a class="btn btn-danger" data-toggle="modal" data-target="#modal-default1">Hapus</a>
+                </td>
+              </tr>
+              </tbody>
+          <div class="box box-default collapsed-box box-solid">
+            <div class="box-header with-border">
+              <h3 class="box-title">Tambah Berkas</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body">
+              <input type="file" name="">
+              <div class="input-group-btn">
+                <button  type="button" class="btn btn-default pull-right btn-flat">Simpan</button>
+              </div>
+            </div>
+          </div>
+            </table>
+          </div>
+          {{-- /Table --}}
         </div>
+
         {{-- /Kegiatan --}}
+
+
 
         {{-- Tag --}}
         <div class="col-md-3">
@@ -123,7 +146,21 @@
                     <button id="add-new-event" type="button" class="btn btn-primary btn-flat">Tambah Tag</button>
                   </div>
                 </div>
-              </div>
+                </div>
+      <div class="box box-solid">
+        <div class="box-body">
+          <!-- the events -->
+          <div id="external-events">
+            <table id="example1" class="table table-hover">
+            </table>
+          </div>
+          <div class="input-group-btn">
+            <button  type="button" class="btn btn-default pull-right btn-flat">Simpan</button>
+          </div>
+        </div>
+
+      </div>
+              
             </div>
             {{-- /tag --}}
           </div>

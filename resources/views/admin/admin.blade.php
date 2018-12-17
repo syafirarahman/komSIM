@@ -132,6 +132,9 @@
             <table id="example1" class="table table-hover">
             </table>
           </div>
+          <div class="input-group-btn">
+            <button  type="button" class="btn btn-default pull-right btn-flat">Simpan</button>
+          </div>
         </div>
 
       </div>
@@ -139,9 +142,8 @@
     </div>
 
   </div>
-</section>
 
-<!-- Modal buat nambah kegiatan -->
+  <!-- Modal buat nambah kegiatan -->
 <div class="modal fade" id="modal-default">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -193,7 +195,7 @@
             <textarea class="form-control" rows="3" placeholder="Enter ..." required name="description"></textarea>
           </div>
 
-          {{-- <label>Tambahkan File</label>
+         <!--  {{-- <label>Tambahkan File</label>
           <div>
             <input type="file" name="file">
           </div> --}}
@@ -245,7 +247,7 @@
 
           </div>
 
-        </div> --}}
+        </div> --}} -->
 
       <div class="modal-footer">
         <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Tutup</button>
@@ -255,6 +257,7 @@
     </div>
   </div>
 </div>
+</section>
 @endsection
 
 @section('Astatus1')
