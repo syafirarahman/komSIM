@@ -132,7 +132,7 @@
 <!-- Modal buat nambah kegiatan -->
 <div class="modal fade" id="modal-default">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content add">
       <form action="{{ action('ActivitiesController@store')}}" method="POST">
         {{ csrf_field() }}
         <div class="modal-header">
@@ -234,13 +234,16 @@
           </div>
 
         </div> --}}
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Tutup</button>
-          <button type="submit" class="btn btn-primary">Simpan</button>
-        </div>
       </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Tutup</button>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+      </div>
     </div>
   </div>
 </div>
+@endsection
+
+@section('Astatus1')
+    active
 @endsection
