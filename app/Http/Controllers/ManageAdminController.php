@@ -110,7 +110,7 @@ class ManageAdminController extends Controller
 
             $user = User::find($id);
             $user->update($input);
-            return redirect()->route('manageadmins.index')->with('success','User successfully updated');
+            return redirect('admin/pengguna')->with('success','User successfully updated');
     }
 
     /**
