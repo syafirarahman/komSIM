@@ -62,7 +62,7 @@
                       <div class="col-md-3">
                           <div class="box box-primary" style="width:100%">
                             <div class="btn-group"style="width:100%">
-                                <a href="#" class="btn btn-default btn-lg" style="width:80%" id="{{$datas->id}}"><i class="fa fa-fw fa-folder"></i>{{$datas->name}}</a>
+                                <a href="{{url('admin/folder')}}" class="btn btn-default btn-lg" style="width:80%" id="{{$datas->id}}"><i class="fa fa-fw fa-folder"></i>{{$datas->name}}</a>
                                 <a class="btn btn-default dropdown-toggle btn-lg" style="width:20%" data-toggle="dropdown">
                                   <span class="caret"></span>
                                   <span class="sr-only">Toggle Dropdown</span>
