@@ -12,19 +12,11 @@
 </form>
 @endsection
 
-@section('content-header')
-<section class="content-header">
-    <h3>Edit User</h3>
-
-    <ol class="breadcrumb">
-        <li><a href="/"><i class="fa fa-dashboard"></i> Admin</a></li>
-        <li>Pengguna</li>
-        <li class="active">Edit User</li>
-    </ol>
-</section>
+@section('content')
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
+			<h1>Edit User</h1>
 			@if (count($errors) > 0)
 			<div class="alert alert-danger">
 				<strong>Sorry!</strong> Something wrong with your input data.<br><br>
@@ -61,13 +53,12 @@
 						{!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' => 'form-control')) !!}
 					</div>
 				</div>
-			</div>
 			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
 			<button type="submit" class="btn btn-primary">Submit</button>
 			</div>
+		</div>
 		
 		{!! Form::close() !!}
 	</div>
-</div>
 </div>
 @endsection

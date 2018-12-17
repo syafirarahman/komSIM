@@ -58,7 +58,7 @@
                     <td>{{ $user->phone }}</td>
                     <td>
                     <a class="btn btn-primary"
-                    data-toggle="modal" data-target="#modal-default1">Edit</a>
+                    href="{{ route('manageadmins.edit',$user->id) }}">Edit</a>
                     {!! Form::open(['method' => 'DELETE','route' =>
                     ['manageadmins.destroy', $user->id],'style'=>'display:inline']) !!}
                     {!! Form::submit('Delete', ['class' => 'btn btndanger'])
