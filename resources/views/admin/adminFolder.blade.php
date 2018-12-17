@@ -66,52 +66,75 @@
               </div>
             </div>
           </div>
-          {{-- Expandable --}}
-          <div class="box box-default collapsed-box box-solid">
-            <div class="box-header with-border">
-              <h3 class="box-title">Files</h3>
-  
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
-                </button>
-              </div>
-              <!-- /.box-tools -->
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              {{-- File Input --}}
-              <div>
-                  <input type="file">
-                  <br>
-                  <button class="btn btn-default">Simpan</button>
+           {{-- Expandable --}}
+           <div class="box box-default collapsed-box box-solid">
+              <div class="box-header with-border">
+                <h3 class="box-title">Files</h3>
+    
+                <div class="box-tools pull-right">
+                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                  </button>
                 </div>
-              {{-- /File Input --}}
-              {{-- Table --}}
-          <table id="example2" class="table table-hover">
-            <thead>
-            <tr>
-              <th>Nomor</th>
-              <th>File</th>
-              <th>Nama User</th>
-              <th>Action</th>
-            </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>uas.docs</td>
-                <td>Devian</td>
-                <td>
-                  <a class="btn btn-danger" data-toggle="modal" data-target="#modal-default1">Hapus</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        {{-- /Table --}}
+                <!-- /.box-tools -->
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+                {{-- File Input --}}
+                <div>
+                    <input type="file">
+                    <br>
+                    <button class="btn btn-default">Simpan</button>
+                  </div>
+                {{-- /File Input --}}
+
+                {{-- Table --}}
+                <table id="example2" class="table table-hover">
+                    <thead>
+                    <tr>
+                      <th>Nomor</th>
+                      <th>File</th>
+                      <th>Nama User</th>
+                      <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>uas.docs</td>
+                        <td>Devian</td>
+                        <td>
+                          <a class="btn btn-danger" data-toggle="modal" data-target="#modal-default1">Hapus</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                {{-- /Table --}}
+              </div>
+                {{-- Table --}}
+                {{-- <table id="example2" class="table table-hover">
+                    <thead>
+                    <tr>
+                      <th>Nomor</th>
+                      <th>File</th>
+                      <th>Nama User</th>
+                      <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>uas.docs</td>
+                        <td>Devian</td>
+                        <td>
+                          <a class="btn btn-danger" data-toggle="modal" data-target="#modal-default1">Hapus</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table> --}}
+                {{-- /Table --}}
+              <!-- /.box-body -->
             </div>
-            <!-- /.box-body -->
-          </div>
-          {{-- /Expandable --}}
+            {{-- /Expandable --}}
         </div>
         {{-- /Kegiatan --}}
 
@@ -148,140 +171,125 @@
                   </div>
                 </div>
               </div>
-              
             </div>
             {{-- /tag --}}
-            <div class="box box-solid">
-                <div class="box-body">
-                  <!-- the events -->
-                  <div id="external-events">
-                    <table id="example1" class="table table-hover">
-                    </table>
-                  </div>
-                  <div class="input-group-btn">
-                    <button  type="button" class="btn btn-default pull-right btn-flat">Simpan</button>
-                  </div>
-                </div>
-        
-              </div>
           </div>
-</section>
 
-<!-- Modal buat nambah kegiatan -->
+          <!-- Modal buat nambah kegiatan -->
 <div class="modal fade" id="modal-default">
-  <div class="modal-dialog">
-    <div class="modal-content add">
-      <form action="{{ action('ActivitiesController@store')}}" method="POST">
-        {{ csrf_field() }}
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">Kegiatan</h4>
-        </div>
-
-        <div class="modal-body">
-          <div class="form-group">
-
-            <label>Judul:</label>
-            <div class="input-group date">
-              <div class="input-group-addon">
-                <i class="fa fa-font"></i>
-              </div>
-              <input type="text" class="form-control pull-right" name="name" required>
-            </div>
-
-            <label>Time:</label>
-            <div class="input-group date">
-              <div class="input-group-addon">
-                <i class="fa fa-clock-o"></i>
-              </div>
-              <input type="time" class="form-control pull-right" required name="time">
-            </div>
-
-            <label>Date:</label>
-            <div class="input-group date">
-              <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-              </div>
-              <input type="date" max="<?php echo date('Y-m-d') ?>" name="date" class="form-control pull-right" id="datepicker" required>
-            </div>
-
-            <label>Tempat:</label>
-            <div class="input-group date">
-              <div class="input-group-addon">
-                <i class="fa fa-bank"></i>
-              </div>
-              <input type="text" class="form-control pull-right" required name="location">
-            </div>
-
-            <label>Deskripsi</label>
-            <div>
-              <textarea class="form-control" rows="3" placeholder="Enter ..." required name="description"></textarea>
-            </div>
-
-            {{-- <label>Tambahkan File</label>
-            <div>
-              <input type="file" name="file">
-            </div> --}}
-
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form action="{{ action('ActivitiesController@store')}}" method="POST">
+          {{ csrf_field() }}
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Kegiatan</h4>
           </div>
-
-          <div class="box box-solid">
-
-            {{-- <label>Tag</label>
-            <div class="box-body">
-              <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
-                <ul class="fc-color-picker" id="color-chooser1">
-                  <li><a class="text-aqua" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-blue" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-light-blue" href="#"><i class="fa fa-square"></i></a> </li>
-                  <li><a class="text-teal" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-yellow" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-orange" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-green" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-lime" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-red" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-purple" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-fuchsia" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-muted" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-navy" href="#"><i class="fa fa-square"></i></a></li>
-                </ul>
+  
+          <div class="modal-body">
+            <div class="form-group">
+  
+              <label>Judul:</label>
+              <div class="input-group date">
+                <div class="input-group-addon">
+                  <i class="fa fa-font"></i>
+                </div>
+                <input type="text" class="form-control pull-right" name="name" required>
               </div>
+  
+              <label>Time:</label>
+              <div class="input-group date">
+                <div class="input-group-addon">
+                  <i class="fa fa-clock-o"></i>
+                </div>
+                <input type="time" class="form-control pull-right" required name="time">
+              </div>
+  
+              <label>Date:</label>
+              <div class="input-group date">
+                <div class="input-group-addon">
+                  <i class="fa fa-calendar"></i>
+                </div>
+                <input type="date" max="<?php echo date('Y-m-d') ?>" name="date" class="form-control pull-right" id="datepicker" required>
+              </div>
+  
+              <label>Tempat:</label>
+              <div class="input-group date">
+                <div class="input-group-addon">
+                  <i class="fa fa-bank"></i>
+                </div>
+                <input type="text" class="form-control pull-right" required name="location">
+              </div>
+  
+              <label>Deskripsi</label>
+              <div>
+                <textarea class="form-control" rows="3" placeholder="Enter ..." required name="description"></textarea>
+              </div>
+  
+              {{-- <label>Tambahkan File</label>
+              <div>
+                <input type="file" name="file">
+              </div> --}}
+  
             </div>
-
+  
+            <div class="box box-solid">
+  
+              {{-- <label>Tag</label>
+              <div class="box-body">
+                <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                  <ul class="fc-color-picker" id="color-chooser1">
+                    <li><a class="text-aqua" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-blue" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-light-blue" href="#"><i class="fa fa-square"></i></a> </li>
+                    <li><a class="text-teal" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-yellow" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-orange" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-green" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-lime" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-red" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-purple" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-fuchsia" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-muted" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-navy" href="#"><i class="fa fa-square"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+  
+            </div>
+  
+            <div class="box box-solid">
+  
+              <div class="input-group">
+                <input id="new-event1" type="text" class="form-control" placeholder="Event Title">
+  
+                <div class="input-group-btn">
+                  <button id="add-new-event1" type="button" class="btn btn-primary btn-flat">Tambah</button>
+                </div>
+              </div>
+  
+              <div class="box-body">
+  
+                <div id="external-events1">
+                  <table id="example1" class="table table-hover">
+                  </table>
+                </div>
+              </div>
+  
+            </div>
+  
+          </div> --}}
+  
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Tutup</button>
+            <button type="submit" class="btn btn-primary">Simpan</button>
           </div>
-
-          <div class="box box-solid">
-
-            <div class="input-group">
-              <input id="new-event1" type="text" class="form-control" placeholder="Event Title">
-
-              <div class="input-group-btn">
-                <button id="add-new-event1" type="button" class="btn btn-primary btn-flat">Tambah</button>
-              </div>
-            </div>
-
-            <div class="box-body">
-
-              <div id="external-events1">
-                <table id="example1" class="table table-hover">
-                </table>
-              </div>
-            </div>
-
-          </div>
-
-        </div> --}}
-      </form>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Tutup</button>
-        <button type="submit" class="btn btn-primary">Simpan</button>
+        </form>
       </div>
     </div>
   </div>
-</div>
-@endsection
+</section>
 
-@section('Astatus1')
-    active
+
 @endsection
