@@ -35,7 +35,7 @@ class AdminController extends Controller
     public function index2()
     {
         $data = Folder::all();
-        return view('admin.adminFolder',compact('data'));
+        return view('admin.adminFolder=',compact('data'));
     }
 
     public function log()

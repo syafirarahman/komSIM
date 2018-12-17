@@ -182,6 +182,7 @@
   <!-- Data Table -->
   <script src="{{asset('asset/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
   <script src="{{asset('asset/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
+  <!-- Custom Js -->
   <script src="{{asset('asset/bower_components/style.js')}}"></script>
   <script>
     $(function () {
