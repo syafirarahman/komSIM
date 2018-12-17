@@ -42,8 +42,18 @@
 
                       <!-- Perulangan nanti terjadi disini -->
                       <div class="col-md-3">
-                        <div class="box box-primary">
-                          <button type="button" class="btn btn-block btn-default btn-lg folder"><i class="fa fa-fw fa-folder"></i> Kegiatan 1</button>
+                        <div class="box box-primary" style="width:100%">
+                          <div class="btn-group"style="width:100%">
+                              <a href="#" class="btn btn-default btn-lg" style="width:80%" "><i class="fa fa-fw fa-folder"></i>Kegiatan</a>
+                              <a class="btn btn-default dropdown-toggle btn-lg" style="width:20%" data-toggle="dropdown">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                              </a>
+                              <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Info&emsp;&emsp;<i class="fa fa-info"></i></a></li>
+                                <li><a href="#">Delete&emsp;<i class="fa fa-trash-o"></i></a></li>
+                              </ul>
+                          </div>
                         </div>
                       </div>
                       
@@ -118,7 +128,7 @@
 <!-- Modal buat nambah kegiatan -->
 <div class="modal fade" id="modal-default">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content add">
 
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -142,7 +152,7 @@
             <div class="input-group-addon">
               <i class="fa fa-clock-o"></i>
             </div>
-            <input type="text" class="form-control pull-right">
+            <input type="time" class="form-control pull-right">
           </div>
 
           <label>Date:</label>
@@ -150,7 +160,7 @@
             <div class="input-group-addon">
               <i class="fa fa-calendar"></i>
             </div>
-            <input type="text" class="form-control pull-right" id="datepicker">
+            <input type="date" max="<?php echo date('Y-m-d') ?>" class="form-control pull-right" id="datepicker">
           </div>
 
           <label>Tempat:</label>
@@ -166,14 +176,14 @@
             <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
           </div>
 
-          <label>Tambahkan File</label>
+          {{-- <label>Tambahkan File</label>
           <div>
             <input type="file">
-          </div>
+          </div> --}}
 
         </div>
 
-        <div class="box box-solid">
+        {{-- <div class="box box-solid">
 
         <label>Tag</label>
         <div class="box-body">
@@ -196,17 +206,17 @@
           </div>
           </div>
 
-          </div>
+          </div> --}}
 
           <div class="box box-solid">
 
-          <div class="input-group">
+          {{-- <div class="input-group">
             <input id="new-event1" type="text" class="form-control" placeholder="Event Title">
 
             <div class="input-group-btn">
               <button id="add-new-event1" type="button" class="btn btn-primary btn-flat">Tambah</button>
             </div>
-          </div>
+          </div> --}}
 
           <div class="box-body">
 

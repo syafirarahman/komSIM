@@ -146,7 +146,7 @@
   <!-- Modal buat nambah kegiatan -->
 <div class="modal fade" id="modal-default">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content add">
       <form action="{{ action('ActivitiesController@store')}}" method="POST">
         {{ csrf_field() }}
       <div class="modal-header">
