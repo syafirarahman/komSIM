@@ -24,7 +24,7 @@ Route::post('register', 'API\UserController@register');
 		Route::get('users','API\UserController@index');
 		//update kucuali password
 		Route::put('/updateUser/{id}','API\UserController@edit');
-		Route::post('detailUser', 'API\UserController@details');
+		Route::get('detailUser/{id}', 'API\UserController@detail');
 		Route::delete('/deleteUser/{id}','API\UserController@delete');
 	//Route Activitie
 		Route::post('createActivitie', 'API\ActivitieController@create');
@@ -44,7 +44,7 @@ Route::post('register', 'API\UserController@register');
 		Route::put('updateFile/{id}','API\FileController@edit');
 		Route::delete('/deleteFile/{id}','API\FileController@delete');
 		Route::post('detailFile/{id}', 'API\FileController@detail');
-		Route::post('uploadFile', 'API\FileController@upload');
+		//Route::post('uploadFile', 'API\FileController@upload');
 	//Route Tag
 		Route::post('createTag', 'API\TagController@create');
 		Route::get('tags','API\TagController@index');

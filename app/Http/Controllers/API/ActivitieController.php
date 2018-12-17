@@ -21,21 +21,21 @@ class ActivitieController extends Controller
                 $activitie->save();
 
                 return "Success Created activitie";
-                return Redirect::route('login');
+               // return Redirect::route('login');
         }
 
     public function delete($id){
         $activitie = Activitie::find($id);
         $activitie -> delete();
         return "Success deleted activitie";
-        return Redirect::route('login');
+       // return Redirect::route('login');
     }
     public function edit(Request $request, $id)
     {
         $activitie = Activitie::find($id);
         $activitie->update($request->all());
         return "Success updated activitie";
-        return Redirect::route('login');
+       // return Redirect::route('login');
 
     }
     public function detail($id)
@@ -46,7 +46,7 @@ class ActivitieController extends Controller
             'data' => $activitie,
         ];
         return response()->json($response, 200);
-        return Redirect::route('login');
+      //  return Redirect::route('login');
     }
    
 }
